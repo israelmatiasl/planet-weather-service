@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ApplicationModule } from '../application/application.module';
-import { PlanetWeatherController } from './controllers/planet-weather.controller';
+import { AuthController } from './controllers/auth.controller';
 import { GuardModule } from 'src/shared/middleware/middleware.module';
 
 @Module({
@@ -9,7 +9,7 @@ import { GuardModule } from 'src/shared/middleware/middleware.module';
     GuardModule
   ],
   controllers: [
-    PlanetWeatherController
+    AuthController
   ],
 })
 export class PresentationModule {}
