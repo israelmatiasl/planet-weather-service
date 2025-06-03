@@ -261,7 +261,7 @@ Puedes probar los endpoints directamente desde **API Gateway** en la siguiente U
   "lastName": "Matias",
   "email": "israelmatiasl@gmail.com",
   "password": "123456789"
-}`
+}
 ```
 
 #### Signin (Login) - `POST /auth/signin
