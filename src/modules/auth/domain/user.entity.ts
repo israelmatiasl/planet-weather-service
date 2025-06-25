@@ -6,6 +6,7 @@ export class User {
     lastName?: string;
     email?: string;
     password?: string;
+    sub?: string;
 
     constructor(data?: Partial<User>) {
         if (data) {
@@ -14,6 +15,7 @@ export class User {
             this.lastName = data.lastName ;
             this.email = data.email;
             this.password = data.password;
+            this.sub = data.sub;
         }
     }
 
@@ -23,7 +25,8 @@ export class User {
             name: props.name,
             lastName: props.lastName,
             email: props.email,
-            password: props.password
+            password: props.password,
+            sub: props.sub
         });
     }
 
@@ -33,7 +36,8 @@ export class User {
             name: json.name,
             lastName: json.lastName,
             email: json.email,
-            password: json.password
+            password: json.password,
+            sub: json.sub
         });
     }
 
@@ -43,7 +47,8 @@ export class User {
             name: this.name,
             lastName: this.lastName,
             email: this.email,
-            password: this.password
+            password: this.password,
+            sub: this.sub
         };
     }
 }

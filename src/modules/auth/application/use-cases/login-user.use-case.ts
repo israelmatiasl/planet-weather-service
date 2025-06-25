@@ -10,7 +10,7 @@ export class LoginUserUseCase {
   constructor(private readonly userService: UserService) {}
 
   async execute(login: LoginDto): Promise<SessionDto> {
-    const { user, token } = await this.userService.login(login.email, login.password);
+    const { user, token, refreshToken } = await this.userService.login(login.email, login.password);
     return {
         user: {
             id: user.id,
@@ -19,6 +19,7 @@ export class LoginUserUseCase {
             email: user.email,
         },
         token: token,
+        refreshToken: refreshToken
     };
   }
 }

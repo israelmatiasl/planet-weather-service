@@ -3,6 +3,7 @@ import { UserRepository } from "./persistence/user.repository";
 import { UserService } from "./services/user.service";
 import { DynamoDBProvider } from "./persistence/dynamodb.config";
 import { JwtModule } from "@nestjs/jwt";
+import { CognitoProvider } from "./providers/cognito.provider";
 
 
 @Module({
@@ -19,7 +20,8 @@ import { JwtModule } from "@nestjs/jwt";
         {
             provide: 'UserRepository',
             useClass: UserRepository,
-        }
+        },
+        CognitoProvider
     ],
     exports: [
         UserService
